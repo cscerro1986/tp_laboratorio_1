@@ -6,16 +6,16 @@
 
 int main()
 {
-    fflush(stdin);
+    __fpurge(stdin);
     char seguir;
     int opcion;
     int operando1, operando2,resutadoSuma, resultadoResta, resultadoDivision,resultadoMultiplicacion, resultadoFact1,resultadoFact2;
 
  do{
-        system("cls");
-        printf("Menu");
-        printf("\n 1. Ingresar primer operando(A=%.2d)", operando1);
-        printf("\n 2. ingresar segundo operando(A=%.2d)", operando2);// este .2 asigna la cantidad de decimales... en este caso 2 decimales.
+
+        printf("\n\nMenu");
+        printf("\n 1. Ingresar primer operando (A=%.2d)  ", operando1);
+        printf("\n 2. ingresar segundo operando (A=%.2d)  ", operando2);// este .2 asigna la cantidad de decimales... en este caso 2 decimales.
         printf("\n 3. Calcular todas las operaciones.");
         printf("\n 4. Mostrar todos los resultados ");
         printf("\n 5. Salir\n\n");
@@ -49,10 +49,18 @@ int main()
 
                 printf("\n\nEl resultado de la suma es: %d",resutadoSuma);
                 printf("\nEl resultado de la resta es: %d",resultadoResta);
-                printf("\nEl resultado de la division es: %d",resultadoDivision);
+
+                if(operando2==0)
+                    {
+                        printf("\nError, no se puede dividir por 0");
+                    }else
+                    {
+                        printf("\nEl resultado de la division es: %d",resultadoDivision);
+                    }
+
                 printf("\nEl resultado de la multiplicacion es: %d",resultadoMultiplicacion);
 
-                if(resultadoFact1==8){
+                if(resultadoFact1==-1){
 
                     printf("\nNo se puede calcacular el numerando de un numero negativo");
                 }else if(resultadoFact1==0){
@@ -62,7 +70,7 @@ int main()
 
                     printf("\nEl resultado del factorial de %d es: %d",operando1,resultadoFact1);
                 }
-                if(resultadoFact2==8){
+                if(resultadoFact2==-1){
 
                     printf("\nNo se puede calcacular el numerando de un numero negativo");
                 }else if(resultadoFact2==0){

@@ -43,8 +43,14 @@ int resta(int op1,int op2){
 
 int division(int op1,int op2){
     int resultado;
-
+    if(op2==0)
+    {
+            resultado=-1;
+    }
+    else
+    {
     resultado=op1/op2;
+    }
     return resultado;
 
 }
@@ -75,7 +81,7 @@ int factorial1(int valor){
     int resultado=1, i;
 
     if(valor<0){
-        resultado=8;
+        resultado=-1;
     }else if(valor==0){
         resultado=1;
 
